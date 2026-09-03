@@ -1,0 +1,47 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[hsl(var(--muted-foreground))] border-t border-[hsl(var(--border))] text-white py-12 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+    
+    {/* Left Column: Logo & Tagline */}
+    <div class="space-y-4">
+      <a href="/" class="inline-block">
+        <img src="/Evolve-Logo-600px.png" alt="Evolve Counseling Logo" class="h-24 w-auto" />
+      </a>
+      <p class="text-sm font-light text-whte">
+        Compassionate care for your mental health.
+      </p>
+    </div>
+
+    {/* Right Column: Links & Psychology Today Badge */}
+    <div class="flex flex-col items-start md:items-end space-y-3 text-sm">
+      <div class="flex items-center gap-2">
+        <span class="text-xs uppercase tracking-wider font-semibold text-white">Find Me On:</span>
+        <a 
+          href="https://www.psychologytoday.com/us/therapists/portia-goyette-vancouver-wa/248393" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block opacity-90 hover:opacity-100 transition-opacity"
+        >
+          <img src="/logo-psychology-today-1.webp" alt="Psychology Today Profile" class="h-8 w-auto object-contain" />
+        </a>
+      </div>
+
+      <a href="/good-faith-estimate" class="hover:text-[hsl(var(--foreground))] transition-colors underline underline-offset-4">
+        Good Faith Estimate
+      </a>
+
+      <a href="/texas-consumer-rights" class="hover:text-[hsl(var(--foreground))] transition-colors underline underline-offset-4">
+        Texas Consumer Rights and Complaint Information
+      </a>
+    </div>
+
+  </div>
+
+  {/* Bottom Copyright Bar */}
+  <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-[hsl(var(--border))] text-center text-xs font-light">
+    &copy; {currentYear} evolve counseling & wellness, llc
+  </div>
+</footer>

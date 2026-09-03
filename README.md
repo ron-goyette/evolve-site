@@ -1,46 +1,24 @@
-# Astro Starter Kit: Basics
+# Evolve Counseling & Wellness
 
-```sh
-npm create astro@latest -- --template basics
-```
+An open-source, mobile-first website for a private therapy and wellness practice, built with **Astro**, **Tailwind CSS**, and integrated with **SimplePractice**.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tech Stack
 
-## 🚀 Project Structure
+*   **Framework:** [Astro](https://astro.build) (Zero-JS-by-default architecture for optimal performance and SEO)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com)[cite: 1]
+*   **Typography:** Playfair Display (Google Fonts)
+*   **Scheduling & Intake:** SimplePractice Embedded Client Portal[cite: 1]
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Getting Started Locally
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Prerequisites
+*   Node.js installed on your machine (v18.0.0 or higher recommended)
 
-## 🧞 Commands
+### Installation & Development
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YOUR-USERNAME/Evolve-Site.git](https://github.com/YOUR-USERNAME/Evolve-Site.git)
+   cd Evolve-Site

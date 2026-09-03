@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutMini from '../components/AboutMini.astro';
+import Services from '../components/Services.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+  <!-- Hero Section -->
+  <section class="relative bg-stone-900 text-white min-h-screen flex items-center px-4 sm:px-6 overflow-hidden" style="background-image: url('/artem-kovalev-fk3XUcfTAvk-unsplash.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    
+    <!-- Dark overlays matching the image -->
+    <div class="absolute inset-0 bg-black/30 z-0"></div> 
+    <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent z-0"></div> 
+    
+    <!-- Main Content Container (Aligned to Navbar container width) -->
+    <div class="w-full max-w-6xl mx-auto relative z-10 pt-16">
+      <div class="max-w-3xl text-center md:text-left space-y-6">
+        <h1 class="font-playfair text-3xl sm:text-5xl md:text-6xl font-normal leading-tight">
+          GUIDING YOU ON THE PATH TO WELLNESS
+        </h1>
+        <p class="text-stone-200 text-base sm:text-lg font-light leading-relaxed">
+          Perhaps you're down or anxious—maybe you're unsure about the future of a relationship, feel that you have lost touch with your true self and identity, or just feel that you aren't living the life you were meant to lead and are ready to imagine a new future. Therapy is a process of growth and self-discovery.
+        </p>
+        <div class="pt-4">
+          <a href="#contact" class="inline-block px-10 py-5 text-sm font-semibold tracking-wider uppercase rounded-full bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:opacity-90 transition-all shadow-md">
+            Take the first step toward wellness
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <AboutMini />
+  <Services />
+  <ContactCTA />
+</BaseLayout>
