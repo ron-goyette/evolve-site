@@ -5,12 +5,11 @@ An open-source, mobile-first website for a private therapy and wellness practice
 ## Tech Stack
 
 *   **Framework:** [Astro](https://astro.build) (Zero-JS-by-default architecture for optimal performance and SEO)
-*   **Styling:** [Tailwind CSS](https://tailwindcss.com)[cite: 1]
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com)
 *   **Typography:** Playfair Display (Google Fonts)
-*   **Scheduling & Intake:** SimplePractice Embedded Client Portal[cite: 1]
+*   **Scheduling & Intake:** SimplePractice Embedded Client Portal
 
 ---
-
 ## Getting Started Locally
 
 ### Prerequisites

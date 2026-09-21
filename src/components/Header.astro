@@ -2,14 +2,20 @@
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Posts', href: '/posts' },
-  { label: 'Contact', href: 'https://evolve-wellness.clientsecure.me/contact-widget' },
+  { 
+    label: 'Services', 
+    children: [
+      { label: 'Individual Therapy', href: '/services/individual-therapy' },
+      { label: 'Brainspotting', href: '/services/brainspotting' },
+      { label: 'Faith-Based Counseling', href: '/services/faith-based-counseling' },
+      { label: 'Clinical Supervision', href: '/services/clinical-supervision' },
+    ]
+  },
+  { label: 'Contact', href: 'https://evolve-wellness.clientsecure.me/contact-widget', target: '_blank' },
 ];
 ---
 
 <header class="absolute top-0 left-0 w-full z-50 bg-transparent border-none">
-  <!--Logo -->
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center">
       <img src="/Evolve-Logo-600px.png" alt="Evolve Counseling Logo" class="h-32 w-auto" />
@@ -18,11 +24,38 @@ const navLinks = [
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-8">
       {navLinks.map((link) => (
-        <a href={link.href} class="text-sm font-medium text-white hover:text-stone-300 transition-colors">
-          {link.label}
-        </a>
+        link.children ? (
+          <div class="relative group py-2">
+            <span class="text-sm font-medium text-white hover:text-stone-300 transition-colors flex items-center gap-1 cursor-default">
+              {link.label}
+              <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="w-56 bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-md shadow-lg py-2 flex flex-col">
+                {link.children.map((child) => (
+                  <a href={child.href} class="px-4 py-2 text-sm text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary))] hover:text-[hsl(var(--primary))] transition-colors">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a 
+            href={link.href} 
+            target={link.target} 
+            rel={link.target === '_blank' ? 'noopener noreferrer' : undefined} 
+            class="text-sm font-medium text-white hover:text-stone-300 transition-colors"
+          >
+            {link.label}
+          </a>
+        )
       ))}
-    <a class="inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 rounded-full px-6 py-4 bg-orange-500 hover:bg-orange-700 text-white font-semibold text-white font-semibold" rel="noopener noreferrer" target="_blank" href="https://evolve-wellness.clientsecure.me">Client Scheduling</a>
+      <a href="https://evolve-wellness.clientsecure.me" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-orange-500 text-[hsl(var(--primary-foreground))] hover:opacity-90 transition shadow-sm">
+        Client Portal
+      </a>
     </nav>
 
     <!-- Mobile Hamburger Toggle -->
@@ -39,12 +72,32 @@ const navLinks = [
   <!-- Mobile Dropdown Menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-[hsl(var(--border))] bg-[hsl(var(--background))] px-6 py-8 flex flex-col gap-6 text-center">
     {navLinks.map((link) => (
-      <a href={link.href} class="mobile-nav-link text-xl font-playfair hover:text-[hsl(var(--muted-foreground))]">
-        {link.label}
-      </a>
+      link.children ? (
+        <div class="flex flex-col gap-3">
+          <span class="text-xl font-playfair text-[hsl(var(--foreground))] cursor-default">
+            {link.label}
+          </span>
+          <div class="flex flex-col gap-2 bg-[hsl(var(--secondary))] py-4 rounded-lg mx-4 shadow-inner">
+            {link.children.map((child) => (
+              <a href={child.href} class="mobile-nav-link text-base text-[hsl(var(--foreground))] hover:text-[hsl(var(--primary))] transition-colors">
+                {child.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <a 
+          href={link.href} 
+          target={link.target} 
+          rel={link.target === '_blank' ? 'noopener noreferrer' : undefined} 
+          class="mobile-nav-link text-xl font-playfair hover:text-[hsl(var(--muted-foreground))]"
+        >
+          {link.label}
+        </a>
+      )
     ))}
-    <a href="#contact" class="mobile-nav-link mt-2 py-3 w-full text-center font-medium rounded-full bg-orange-500 text-white">
-      Client Portal
+    <a href="https://evolve-wellness.clientsecure.me/contact-widget" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mt-2 py-3 w-full text-center font-medium rounded bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-md">
+      Get in Touch
     </a>
   </div>
 </header>

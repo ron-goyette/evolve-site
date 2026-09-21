@@ -1,0 +1,142 @@
+---
+import InternalLayout from '../layouts/InternalLayout.astro';
+
+const licenses = [
+  {
+    type: "Licensed Marriage & Family Therapist (LMFT)",
+    number: "LF60707416",
+    state: "Washington",
+    board: "Washington State Department of Health"
+  },
+  {
+    type: "Licensed Marriage & Family Therapist (LMFT)",
+    number: "T1315",
+    state: "Oregon",
+    board: "Oregon Board of Licensed Professional Counselors and Therapists"
+  },
+  {
+    type: "Licensed Marriage & Family Therapist (LMFT)",
+    number: "205837",
+    state: "Texas",
+    board: "Texas State Board of Examiners of Marriage and Family Therapists"
+  },
+  {
+    type: "Licensed Marriage & Family Therapist (LMFT)",
+    number: "MFT516",
+    state: "Hawaii",
+    board: "Hawaii Professional and Vocational Licensing Board"
+  },
+  {
+    type: "LMFT",
+    number: "2985",
+    state: "Colorado",
+    board: "Colorado Department of Regulatory Agencies Division of Professions and Occupations"
+  }
+];
+---
+
+<InternalLayout title="About | Portia Goyette, LMFT">
+  <style is:global>
+    body {
+      background-color: hsl(var(--secondary)) !important;
+    }
+  </style>
+
+  <div class="pt-12 pb-32 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-16 items-start">
+      
+      <div class="w-full md:w-7/12 order-2 md:order-1">
+        
+        <section class="space-y-6">
+          <h1 class="font-playfair text-3xl font-bold uppercase tracking-wider text-[hsl(var(--background))]">About Me</h1>
+          <p class="text-lg font-medium text-[hsl(var(--background))]">Welcome — I am so glad you're here.</p>
+          <div class="space-y-4 font-light leading-relaxed text-[hsl(var(--background))]">
+            <p>
+              I'm Portia Goyette, Licensed Marriage and Family Therapist with nearly two decades of experience supporting individuals, couples, and families on their paths toward healing, growth, and deeper connection.
+            </p>
+            <p>
+              I currently offer online therapy for individuals located in Washington, Oregon, Colorado, Texas, and Hawaii, creating a flexible and accessible space for meaningful work, wherever you are.
+            </p>
+            <p>
+              My journey began in community mental health, where I had the honor of serving individuals and families from all walks of life. I also had the privilege of supervising a team of mental health professionals—an experience that deepened my appreciation for both the clinical and deeply human sides of this work.
+            </p>
+            <p>
+              For the past 10 years I have been in solo private practice, where I've found tremendous fulfillment in walking alongside each person I meet. I am inspired every day by the vulnerability, bravery, and resilience of my clients, and it is difficult for me to imagine experiencing any other profession as such a gift.
+            </p>
+          </div>
+        </section>
+
+        <section class="space-y-6 pt-16">
+          <h2 class="font-playfair text-3xl font-bold text-[hsl(var(--background))]">My Philosophy</h2>
+          <div class="space-y-4 font-light leading-relaxed text-[hsl(var(--background))]">
+            <p>
+              Choosing to enter therapy is a profound act of courage. It's an acknowledgment that you don't have to face life's challenges alone—that healing happens best in connection.
+            </p>
+            <p>
+              We are relational beings who are inherently designed to share our experiences—from celebration and sorrow—in connection with others. As a human, I understand suffering. As a therapist, my intention is to honor every part of your humanness and walk alongside you in a manner that helps illuminate your inner resources so that you experience an enhanced sense of empowerment, skillfulness, and joyful living.
+            </p>
+            <p>
+              Life is an ever-evolving journey. Along the way, we all encounter seasons of contentment and hope, as well as moments of darkness and uncertainty. By nurturing your emotional and spiritual wellbeing, you can deepen your capacity for self-reflection, self-awareness, and meaning-making—essential ingredients for living a more authentic and fulfilling life.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="w-full md:w-5/12 order-1 md:order-2 space-y-12">
+        
+        <div class="space-y-4 text-center md:text-left">
+          <img 
+            src="/Portia_Goyette_LMFT.webp" 
+            alt="Portia Goyette, LMFT" 
+            class="w-full max-w-sm mx-auto md:mx-0 aspect-square object-cover rounded-full shadow-lg" 
+          />
+          <div class="pt-4 space-y-1">
+            <h2 class="font-playfair text-2xl font-bold text-[hsl(var(--background))]">Portia Goyette</h2>
+            <p class="text-sm font-light text-[hsl(var(--background))]">
+              Licensed Marriage and Family Therapist (WA/OR/CO/TX/HI) & Brainspotting Practitioner
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <h3 class="font-playfair text-2xl font-bold text-[hsl(var(--background))]">Professional Licenses</h3>
+          
+          <div class="flex flex-col gap-4">
+            {licenses.map((lic) => (
+              <div class="bg-[hsl(var(--background))] border border-white/20 rounded-3xl p-5 shadow-sm text-[hsl(var(--foreground))]">
+                <dl class="flex flex-col gap-4 m-0">
+                  
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <dt class="font-bold text-sm">License</dt>
+                      <dd class="text-base mt-0.5">{lic.type}</dd>
+                    </div>
+                    <div>
+                      <dt class="font-bold text-sm">License Number</dt>
+                      <dd class="text-base mt-0.5">{lic.number}</dd>
+                    </div>
+                  </div>
+                  
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <dt class="font-bold text-sm">State</dt>
+                      <dd class="text-base mt-0.5">{lic.state}</dd>
+                    </div>
+                    <div>
+                      <dt class="font-bold text-sm">Issuing Authority</dt>
+                      <dd class="text-base mt-0.5 leading-snug">{lic.board}</dd>
+                    </div>
+                  </div>
+
+                </dl>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</InternalLayout>

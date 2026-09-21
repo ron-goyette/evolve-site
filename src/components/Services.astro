@@ -3,22 +3,22 @@ const services = [
   {
     title: "Individual Therapy",
     description: "Helping individuals reconnect with themselves and live more meaningful, empowered lives. I provide online therapy for individuals 16 and up in Washington, Oregon, Texas, and throughout the Hawaiian islands.",
-    href: "#"
+    href: "/services/individual-therapy"
   },
   {
     title: "Brainspotting",
     description: "“Brainspotting is based on the profound attunement of the therapist with the patient, finding a somatic cue and extinguishing it by down-regulating the amygdala. It isn’t just PNS (Parasympathetic Nervous System) activation that is facilitated, it is homeostasis” —Robert Scaer, MD, “The Trauma Spectrum”",
-    href: "#"
+    href: "/services/brainspotting"
   },
     {
     title: "Faith-based counseling",
     description: "Faith and spirituality can be an important source of meaning, hope, comfort, and connection, especially during difficult seasons of life. As a Christian, I welcome the opportunity to bring a Christ-centered perspective into therapy for those who desire it, while honoring and respecting each person’s beliefs, values, and journey. My hope is to meet you where you are and create a safe space to explore what gives your life meaning, purpose, and hope—without judgment or pressure.",
-    href: "#"
+    href: "services/faith-based-counseling"
   },
   {
     title: "Clinical Supervision",
     description: "I offer relational, insight-oriented clinical supervision for fellow therapists. With over 12 years of experience supervising pre-licensed and licensed clinicians, my style centers on curiosity, personal growth, and authenticity—not checklists. I work best with those looking to deepen their clinical identity, not just meet requirements. Licensed in TX, WA, OR, CO, and HI.",
-    href: "#"
+    href: "services/clinical-supervision"
   },
 ];
 ---
@@ -30,7 +30,7 @@ const services = [
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {services.map((service) => (
-        <div class="bg-[hsl(var(--card))] p-8 rounded-lg shadow-md border border-[hsl(var(--border))] flex flex-col h-full hover:shadow-lg transition-shadow">
+        <div class="bg-[hsl(var(--card))] p-8 rounded-3xl shadow-md border border-[hsl(var(--border))] flex flex-col h-full hover:shadow-lg transition-shadow">
           <h3 class="font-playfair text-2xl mb-4 text-[hsl(var(--foreground))]">{service.title}</h3>
           <p class="text-[hsl(var(--muted-foreground))] leading-relaxed flex-grow font-light">
             {service.description}
