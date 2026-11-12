@@ -71,7 +71,7 @@ const navLinks = [
 
   <!-- Mobile Dropdown Menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-[hsl(var(--border))] bg-[hsl(var(--background))] px-6 py-8 flex flex-col gap-6 text-center">
-    {navLinks.map((link) => (
+    {navLinks.filter((link) => link.label !== 'Contact').map((link) => (
       link.children ? (
         <div class="flex flex-col gap-3">
           <span class="text-xl font-playfair text-[hsl(var(--foreground))] cursor-default">
